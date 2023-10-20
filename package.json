@@ -3,23 +3,24 @@
   "version": "1.0.0",
   "description": "Convenient use of the Unity command line in GitHub Actions",
   "main": "src/run.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
   "author": "Morsiusiurandum",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.1",
+    "@actions/exec": "^1.1.1",
     "@actions/github": "^6.0.0"
   },
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fictional-vision/unity-runner.git"
+    "url": "git+https://github.com/Morsiusiurandum/unity-runner.git"
   },
   "bugs": {
-    "url": "https://github.com/fictional-vision/unity-runner/issues"
+    "url": "https://github.com/Morsiusiurandum/unity-runner/issues"
   },
-  "homepage": "https://github.com/fictional-vision/unity-runner#readme"
+  "homepage": "https://github.com/Morsiusiurandum/unity-runner#readme",
+  "scripts": {
+    "test": "node ./_test_/license_test.js"
+  }
 }

@@ -1,23 +1,31 @@
 name: 'unity runner'
 description: 'Convenient use of the Unity command line in GitHub Actions.'
 inputs:
-  username:
+  unity-path:
+    description: 'Path of Unity.exe'
+    required: true
+  unity-username:
     description: 'Unity account username'
     required: true
   unity-password:
     description: 'Unity account password'
     required: true
-  serial:
+  unity-serial:
     description: 'Unity license serial key. Used for Plus/Pro license activation.'
     required: false
+  unity-alf:
+    description: 'Unity alf file. Used for Personal license activation.'
+    required: false
+  project-path:
+    description: 'Unity project path. '
+    required: true
   execute-method:
     description: 'Execute the static method as soon as Unity opens the project.'
-    required: true
-    default: ''
+    required: false
   disable-gpu-skinning:
     description: 'Disable Graphics Processing Unit (GPU) skinning at startup.'
     required: false
 runs:
   using: 'node20'
-  main: 'src/run.js'
-  post: 'cleanup.js'
+  main: 'src/activate-license.js'
+  post: 'src/return_license.js'
