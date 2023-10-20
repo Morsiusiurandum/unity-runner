@@ -42,7 +42,7 @@ async function activate() {
     action_cli += ` -projectPath "${projectPath}"`;
     
     const executeMethod = core.getInput('execute-method');
-    if (executeMethod) action_cli += ` -executeMethod "${executeMethod}"`;
+    if (executeMethod) action_cli += ` -executeMethod "${executeMethod}`;
     
     const stdout = await execute_unity(unityPath, `${action_cli}`);
     
