@@ -18,7 +18,6 @@ function activate_cli() {
 
     let alf = path.resolve(__dirname, './act.alf')
     fs.writeFile(alf, alf_str, {encoding: 'utf8'}, () => {
-        throw new Error('Manual license file creates failed.');
     })
 
     if ((!serial) && (!alf)) throw new Error('serial or .alf is not found');
