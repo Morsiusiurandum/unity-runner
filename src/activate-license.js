@@ -16,16 +16,16 @@ function activate_cli() {
     const alf_str = core.getInput('unity-alf', {required: false});
 
 
-    let alf = path.resolve(__dirname, './act.alf')
-    fs.writeFile(alf, alf_str, {encoding: 'utf8'}, () => {
+    let ulf = path.resolve(__dirname, './act.ulf')
+    fs.writeFile(ulf, alf_str, {encoding: 'utf8'}, () => {
     })
 
-    if ((!serial) && (!alf)) throw new Error('serial or .alf is not found');
+    if ((!serial) && (!ulf)) throw new Error('serial or .alf is not found');
 
     if (serial) {
-        cli += ` -serial "${serial}`;
+        cli += ` -serial ${serial}`;
     } else {
-        cli += ` -manualLicenseFile "${alf}`;
+        cli += ` -manualLicenseFile "${ulf}"`;
     }
 
     return cli;
