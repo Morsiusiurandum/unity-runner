@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const {executeUnity} = require("./run");
+const {execute_unity} = require("./run");
 
 async function return_license() {
     const path = core.getInput('unity-path') || process.env.UNITY_PATH;
@@ -9,7 +9,7 @@ async function return_license() {
     if (core.getInput('unity-serial')) {
         const username = core.getInput('unity-username', {required: true});
         const password = core.getInput('unity-password', {required: true});
-        await executeUnity(path, `-returnlicense -username "${username}" -password "${password}"`);
+        await execute_unity(path, `-returnlicense -username "${username}" -password "${password}"`);
     }
 }
 

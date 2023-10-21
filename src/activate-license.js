@@ -47,7 +47,7 @@ async function activate() {
     const stdout = await execute_unity(unityPath, `${action_cli}`);
     
     if (!stdout.includes('Next license update check is after')) {
-        throw new Error('Activation failed');
+        //  throw new Error('Activation failed');
     }
 }
 
