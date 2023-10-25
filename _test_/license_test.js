@@ -1,5 +1,8 @@
-async function run()
+const {args} = require("../src/cli_args")
+
+function run()
 {
-    console.log("It is a test.")
+    console.log(args())
 }
-run().then(() => {});
+
+run();

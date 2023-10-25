@@ -34,6 +34,6 @@ function args() {
 
     const createManualActivationFile = core.getInput('create-manual-activation-file');
     if (createManualActivationFile === 'true') cli += ` -createManualActivationFile -logfile`;
-        
-        return cli;
+
+    return cli;
 }

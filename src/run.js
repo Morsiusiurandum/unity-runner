@@ -18,6 +18,6 @@ async function execute_unity(args) {
     const path = core.getInput('unity-path', {required: true});
     if (!path) throw new Error('Unity path not found');
     
-    let default_cli = ` ${path} -batchmode -nographics -quit`;
+    let default_cli = `"${path}" -batchmode -nographics -quit`;
     return await execute(`${linux} ${default_cli} ${args}`, true);
 }
