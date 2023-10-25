@@ -6,26 +6,25 @@ inputs:
     required: true
   unity-username:
     description: 'Unity account username'
-    required: true
+    required: false
   unity-password:
     description: 'Unity account password'
-    required: true
+    required: false
   unity-serial:
     description: 'Unity license serial key. Used for Plus/Pro license activation.'
     required: false
-  unity-alf:
-    description: 'Unity alf file. Used for Personal license activation.'
+  unity-ulf:
+    description: 'Unity ulf file. Used for Personal license activation.'
     required: false
   project-path:
     description: 'Unity project path. '
-    required: true
+    required: false
   execute-method:
     description: 'Execute the static method as soon as Unity opens the project.'
     required: false
-  disable-gpu-skinning:
-    description: 'Disable Graphics Processing Unit (GPU) skinning at startup.'
+  create-manual-activation-file:
+    description: ' '
     required: false
 runs:
   using: 'node20'
-  main: 'src/activate-license.js'
-  post: 'src/return_license.js'
+  main: 'src/main.js'

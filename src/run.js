@@ -1,4 +1,5 @@
 const exec = require('@actions/exec');
+const core = require("@actions/core");
 
 module.exports = {execute_unity};
 
@@ -10,9 +11,13 @@ async function execute(command, ignoreReturnCode) {
     return stdout;
 }
 
-async function execute_unity(unityPath, args) {
+async function execute_unity(args) {
     let linux = '';
-    let default_cli = '-batchmode -nographics -quit';
     if (process.platform === 'linux') linux = 'xvfb-run --auto-servernum';
-    return await execute(`${linux} "${unityPath}" ${default_cli} ${args}`, true);
+
+    const path = core.getInput('unity-path', {required: true});
+    if (!path) throw new Error('Unity path not found');
+    
+    let default_cli = ` ${path} -batchmode -nographics -quit`;
+    return await execute(`${linux} ${default_cli} ${args}`, true);
 }
