@@ -17,7 +17,7 @@ function args() {
 
     const ulf_str = core.getInput('unity-ulf');
     if (ulf_str) {
-        let ulf = path.resolve(__dirname, './act.ulf')
+        let ulf = './act.ulf';
         fs.writeFile(ulf, ulf_str, {encoding: 'utf8'}, () => {
         })
         cli += ` -manualLicenseFile "${ulf}"`;
