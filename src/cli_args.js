@@ -20,7 +20,7 @@ function args() {
         let ulf = './act.ulf';
         fs.writeFile(ulf, ulf_str, {encoding: 'utf8'}, () => {
         })
-        cli += ` -manualLicenseFile "${ulf}"`;
+        cli += ` -manualLicenseFile act.ulf`;
     }
 
     const returnlicense = core.getInput('return-license');
