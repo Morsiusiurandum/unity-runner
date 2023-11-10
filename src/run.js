@@ -19,5 +19,5 @@ async function execute_unity(args) {
     if (!path) throw new Error('Unity path not found');
     
     let default_cli = `"${path}" -batchmode -nographics -quit`;
-    return await execute(`${linux} ${default_cli} ${args}`, true);
+    return await execute(`${default_cli} ${args}`, true);
 }
